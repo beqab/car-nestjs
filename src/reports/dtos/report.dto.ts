@@ -7,6 +7,7 @@ import {
   IsLongitude,
   IsLatitude,
 } from "class-validator";
+import { Expose } from "class-transformer";
 
 export class ReportDto {
   @PrimaryGeneratedColumn()
@@ -33,6 +34,9 @@ export class ReportDto {
   @IsNumber()
   //   @IsLatitude()
   lat: number;
+
+  @Expose()
+  approve: boolean;
 
   @IsNumber()
   @Min(0)
