@@ -9,7 +9,7 @@ import { map } from "rxjs/operators";
 import { plainToClass } from "class-transformer";
 import { UserDto } from "src/users/dtos/user.dto";
 
-export function serialize(dto: any) {
+export function Serialize(dto: any) {
   return UseInterceptors(new SerializeInterceptor(dto));
 }
 

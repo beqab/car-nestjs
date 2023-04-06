@@ -15,7 +15,7 @@ import {
 import { AuthGuard } from "src/guards/auth.guard";
 import {
   SerializeInterceptor,
-  serialize,
+  Serialize,
 } from "src/interceptors/serialize.interceptor";
 import { AuthService } from "./auth.service";
 import { CurrentUserDecorator } from "./decorators/current-user.decorator";
@@ -69,7 +69,7 @@ export class UsersController {
 
   // @UseInterceptors(ClassSerializerInterceptor)
   // @UseInterceptors(new SerializeInterceptor(UserDto))
-  @serialize(UserDto)
+  @Serialize(UserDto)
   @Get("user/:id")
   getUserById(@Param("id") id: string) {
     return this.userService.findOne(parseInt(id));
