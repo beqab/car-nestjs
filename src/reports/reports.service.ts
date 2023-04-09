@@ -46,6 +46,7 @@ export class ReportsService {
       .orderBy("milage - :milage", "DESC")
       .setParameters({ milage })
       .limit(3)
-      .getRawMany();
+      .getRawOne();
   }
 }
+//
